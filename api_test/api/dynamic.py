@@ -47,7 +47,9 @@ class Dynamic(APIView):
         except EmptyPage:
             obm = paginator.page(paginator.num_pages)
         serialize = ProjectDynamicSerializer(obm, many=True)
-        return JsonResponse(data={"data": serialize.data,
-                                  "page": page,
-                                  "total": total
-                                  }, code="999999", msg="成功！")
+        return JsonResponse(
+            data={
+                "data": serialize.data,
+                "page": page,
+                "total": total
+            }, code="999999", msg="成功！")
