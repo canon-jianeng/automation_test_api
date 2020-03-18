@@ -1,5 +1,5 @@
 from django.apps import AppConfig
-from suit.apps import DjangoSuitConfig
+# from suit.apps import DjangoSuitConfig
 
 
 class ApiTestConfig(AppConfig):
@@ -7,5 +7,5 @@ class ApiTestConfig(AppConfig):
     verbose_name = '中文'
 
 
-class SuitConfig(DjangoSuitConfig):
-    layout = 'horizontal'
+# class SuitConfig(DjangoSuitConfig):
+#     layout = 'horizontal'

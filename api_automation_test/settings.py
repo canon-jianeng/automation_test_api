@@ -77,7 +77,8 @@ AUTH_PROFILE_MODULE = 'djangoadmin.api_test.UserProfile'
 # Application definition
 
 INSTALLED_APPS = [
-    'api_test.apps.SuitConfig',
+    # 'api_test.apps.SuitConfig',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,7 +141,6 @@ ROOT_URLCONF = 'api_automation_test.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': ['frontend/dist'],
         'DIRS': [os.path.join(BASE_DIR, 'frontend/dist')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -160,12 +160,16 @@ WSGI_APPLICATION = 'api_automation_test.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# 由于 Mysql 8.0 的部分语法, 密码的加密方式发生了改变, 在8.0 中的用户密码采用的是 cha2 加密方法
+# 有可能 是 Django 对这种加密的密码进行编译导致密码设置密码错误
+# 执行 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY'password';
+# 在 Mysql 8.0 中，利用上述语句可以更新用户的加密方式为历史版本的方式
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'api_test',
         'USER': 'root',
-        'PASSWORD': 'Neng.19931118',
+        'PASSWORD': 'password',
         'HOST': '47.112.193.234',
         'PORT': '3306',
     }
