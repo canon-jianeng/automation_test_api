@@ -18,7 +18,7 @@ def signature(code):
     :param code:
     :return:
     """
-    appkey = APPSECRET  # miyao
+    appkey = APPSECRET
 
     # hmac_sha256加密
     signature = hmac.new(bytes(appkey, encoding='utf-8'), bytes(code, encoding='utf-8'),
@@ -30,4 +30,4 @@ def signature(code):
 
 
 if __name__ == '__main__':
-    print(signature('1234567890123'))
+    print(signature('admin12345'))
