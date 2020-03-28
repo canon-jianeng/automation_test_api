@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/12/13 22:19
-# @Author  : litao
-# @Project : api_automation_test
-# @FileName: DingManage.py
-# @Software: PyCharm
 
 import random
 import time
