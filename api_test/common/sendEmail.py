@@ -1,10 +1,6 @@
 #! /usr/bin/python
 # -*- coding:utf-8 -*-
-"""
-Created on 2017年8月22日
 
-@author: li tao
-"""
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
